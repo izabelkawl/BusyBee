@@ -1,0 +1,5 @@
+@import "../../../assets/scss/variables";
+
+.title{
+  @extend %title-font;
+}

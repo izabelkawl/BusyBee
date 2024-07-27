@@ -1,0 +1,16 @@
+@if (config) {
+  <form [formGroup]="formGroup" class="d-flex flex-column">
+    @for (ctrl of config; track $index) {
+      @switch (ctrl.type) {
+        @case ("input") {
+          <app-input-field
+            [formControlName]="ctrl.formControlName"
+            [placeholder]="ctrl.placeholder"
+            [label]="ctrl.label"
+          />
+        }
+        @default {}
+      }
+    }
+  </form>
+}

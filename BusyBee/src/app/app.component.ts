@@ -14,11 +14,17 @@ import { ITask } from './state/models/task.model';
 export class AppComponent {
   tasks$: Observable<ITask[]>;
 
+  public isLogged = false;
+
   constructor(private store: Store<AppState>) {
     this.tasks$ = this.store.select(selectAllTasks);
   }
 
   ngOnInit(): void {
     this.store.dispatch(TaskActions.loadTasks());
+  }
+
+  get backgroundColor(): string {
+    return this.isLogged ? 'yellow' : 'pink';
   }
 }

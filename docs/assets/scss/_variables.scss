@@ -1,13 +1,23 @@
 // colors
 $white-color: #ffffff;
-$dark-pink-color:#CE3471;
-$pink-color: #FF93B1;
-$yellow-color: #FFE979;
-$dark-yellow-color: #FFB826;
-
-// font
-$font-size: 12px;
-$font-color: rgb(48, 48, 48);
+$dark-pink-color: #ce3471;
+$pink-color: #ff93b1;
+$yellow-color: #ffe979;
+$dark-yellow-color: #ffb826;
+$dark-gray-color: rgb(48, 48, 48);
 
 // shadow
 $shadow-props: 0px 0px 0.5vw $dark-pink-color;
+
+// font
+$font-size: 12px;
+$font-color: $dark-gray-color;
+
+%title-font {
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  text-shadow:
+    4px 3px 0px $yellow-color,
+    9px 8px 0px rgba(0, 0, 0, 0.15);
+}

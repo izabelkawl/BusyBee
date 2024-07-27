@@ -1,14 +1,12 @@
 @import "./assets/scss/index";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import 'bootstrap/scss/bootstrap';
 
 body {
-  background-color: $dark-yellow-color;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  color: $font-color;
 }
+
