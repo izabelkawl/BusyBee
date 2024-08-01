@@ -1,11 +1,11 @@
 <div class="register-container">
-  <h1 class="register-container__title">Stwórz konto</h1>
+  <h1 class="register-container__title">{{ "CREATE_ACCOUNT" | translate }}</h1>
   <div class="register-container__content">
     <app-form
       #registerForm
       [config]="config"
       (submit)="sendForm()"
-      [submitTitle]="'Zarejestruj się'"
+      [submitTitle]="'REGISTER' | translate"
     />
   </div>
 </div>

@@ -1,11 +1,12 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { FormComponent } from 'src/app/components/form/form.component';
 import { IConfig } from 'src/app/components/form/form.models';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent, TranslateModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
@@ -15,25 +16,25 @@ export class RegisterComponent {
   config: IConfig[] = [
     {
       formControlName: 'login',
-      label: 'Nazwa użytkownika',
-      placeholder: 'Podaj login :)',
+      label: 'NICK',
+      placeholder: '',
       type: 'input',
     },
     {
       formControlName: 'email',
-      label: 'E-mail',
-      placeholder: 'Podaj e-mail :)',
+      label: 'E_MAIL',
+      placeholder: 'abc@gmail.com',
       type: 'input',
     },
     {
       formControlName: 'password',
-      label: 'Hasło',
+      label: 'PASSWORD',
       placeholder: '********',
       type: 'input',
     },
     {
       formControlName: 'password2',
-      label: 'Powtórz hasło',
+      label: 'REPEAT_PASSWORD',
       placeholder: '********',
       type: 'input',
     },

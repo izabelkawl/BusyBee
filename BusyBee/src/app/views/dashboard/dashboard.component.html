@@ -1,13 +1,15 @@
 <div class="dashboard-container">
-  <h1 class="dashboard-container__title">BusyBee</h1>
+  <h1 class="dashboard-container__title">{{ "TITLE" | translate }}</h1>
   <img
     class="dashboard-container__image"
     src="assets/img/icons/bee.png"
     alt="bee"
   />
-  <p>In progress ...</p>
+  <p>{{ "IN_PROGRESS" | translate }}</p>
   <div class="d-flex gap-4">
-    <app-button [routerLink]="'/login'">Logowanie</app-button>
-    <app-button [routerLink]="'/register'">Rejestracja</app-button>
+    <app-button [routerLink]="'/login'">{{ "LOGIN" | translate }}</app-button>
+    <app-button [routerLink]="'/register'">{{
+      "REGISTER" | translate
+    }}</app-button>
   </div>
 </div>

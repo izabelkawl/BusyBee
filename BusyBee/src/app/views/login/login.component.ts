@@ -1,11 +1,12 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { FormComponent } from 'src/app/components/form/form.component';
 import { IConfig } from 'src/app/components/form/form.models';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormComponent],
+  imports: [FormComponent, TranslateModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -14,19 +15,20 @@ export class LoginComponent {
 
   config: IConfig[] = [
     {
-      formControlName: 'login',
-      label: 'Login',
-      placeholder: 'Podaj login :)',
+      formControlName: 'email',
+      label: 'E_MAIL',
+      placeholder: 'abc@gmail.com',
       type: 'input',
     },
     {
       formControlName: 'password',
-      label: 'Hasło',
+      label: 'PASSWORD',
       placeholder: '********',
       type: 'input',
     },
   ];
 
-  sendForm(): void {console.log('log');
+  sendForm(): void {
+    console.log('log');
   }
 }

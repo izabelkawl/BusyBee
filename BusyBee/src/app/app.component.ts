@@ -5,6 +5,7 @@ import { AppState } from './state/reducers';
 import * as TaskActions from './state/actions/task.action';
 import { selectAllTasks } from './state/selectors/task.selector';
 import { ITask } from './state/models/task.model';
+import { LangService } from './core/lang.service';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,19 @@ export class AppComponent {
 
   public isLogged = false;
 
-  constructor(private store: Store<AppState>) {
+  constructor(
+    private store: Store<AppState>,
+    private langService: LangService,
+  ) {
     this.tasks$ = this.store.select(selectAllTasks);
   }
 
   ngOnInit(): void {
     this.store.dispatch(TaskActions.loadTasks());
+  }
+
+  changeLang(): void {
+    this.langService.changeLang();
   }
 
   get backgroundColor(): string {

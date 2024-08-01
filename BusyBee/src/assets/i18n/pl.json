@@ -1,0 +1,13 @@
+{
+  "TITLE": "BusyBee",
+  "IN_PROGRESS": "W trakcie ...",
+  "LOGIN": "Logowanie",
+  "LOG_IN": "Zaloguj się",
+  "REGISTRATION": "Rejestracja",
+  "REGISTER": "Zarejestruj się",
+  "NICK": "Nazwa",
+  "E_MAIL": "E-mail",
+  "PASSWORD": "Hasło",
+  "REPEAT_PASSWORD": "Powtórz hasło",
+  "CREATE_ACCOUNT": "Stwórz konto"
+}

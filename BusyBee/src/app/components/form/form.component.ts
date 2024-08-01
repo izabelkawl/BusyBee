@@ -1,13 +1,13 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { InputFieldComponent } from './input-field/input-field.component';
 import {
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
-import { ButtonComponent } from './button/button.component';
+import { ButtonComponent } from '../button/button.component';
+import { InputFieldComponent } from './input-field/input-field.component';
 
 @Component({
   selector: 'app-form',
