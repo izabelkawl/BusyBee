@@ -12,5 +12,9 @@
         @default {}
       }
     }
+
+    <app-button (btnClicked)="onSubmit()" class="d-flex flex-column">
+      {{ submitTitle }}
+    </app-button>
   </form>
 }

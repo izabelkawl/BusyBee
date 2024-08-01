@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { FormComponent } from 'src/app/components/form/form.component';
+import { IConfig } from 'src/app/components/form/form.models';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { FormComponent } from 'src/app/components/form/form.component';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  config = [
+  @ViewChild('loginForm') loginForm!: TemplateRef<LoginComponent>;
+
+  config: IConfig[] = [
     {
       formControlName: 'login',
       label: 'Login',
@@ -23,4 +26,7 @@ export class LoginComponent {
       type: 'input',
     },
   ];
+
+  sendForm(): void {console.log('log');
+  }
 }

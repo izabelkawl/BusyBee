@@ -1,1 +1,11 @@
-<p>register works!</p>
+<div class="register-container">
+  <h1 class="register-container__title">Stwórz konto</h1>
+  <div class="register-container__content">
+    <app-form
+      #registerForm
+      [config]="config"
+      (submit)="sendForm()"
+      [submitTitle]="'Zarejestruj się'"
+    />
+  </div>
+</div>
