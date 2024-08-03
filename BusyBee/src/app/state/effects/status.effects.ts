@@ -2,6 +2,8 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap } from 'rxjs';
 import { StatusService } from '../services/status.service';
+import { loadStatuses } from '../actions/status.action';
+import { loadStatusesSuccess } from './../actions/status.action';
 
 @Injectable()
 export class StatusEffects {
@@ -10,12 +12,12 @@ export class StatusEffects {
 
   loadStatus$ = createEffect(() =>
     this.#actions.pipe(
-      ofType('[Status] Load Status'),
+      ofType(loadStatuses),
       mergeMap(() =>
         this.#statusService
           .getStatuses()
-          .pipe(map((statuses) => ({ type: '[Status] Load Status', statuses })))
-      )
-    )
+          .pipe(map((statuses) => loadStatusesSuccess({ statuses }))),
+      ),
+    ),
   );
 }

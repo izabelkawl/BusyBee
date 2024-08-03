@@ -1,0 +1,29 @@
+@import "./../../../assets/scss/variables";
+@import "./../../../assets/scss/icons";
+
+$icon-size: 20px;
+
+.list-component {
+  background-color: $white-color;
+  border-radius: $border-radius;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  width: 300px;
+  padding: 20px;
+
+  .mat-icon {
+    @extend %icon_container;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    margin-top: 20px;
+    background-color: $gray-color;
+    padding: 20px;
+  }
+}

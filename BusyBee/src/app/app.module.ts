@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ButtonComponent } from './components/button/button.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,14 +21,16 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     StateModule,
     HttpClientModule,
     NgbModule,
+    CommonModule,
     MatIconModule,
+    ButtonComponent,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+        deps: [HttpClient],
+      },
+    }),
   ],
   bootstrap: [AppComponent],
   providers: [provideAnimationsAsync()],

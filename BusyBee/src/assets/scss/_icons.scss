@@ -1,0 +1,20 @@
+@import "./variables";
+
+$icon-size: 32px;
+
+%icon_container {
+    width: $icon-size;
+    height: $icon-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    transition: 0.3s;
+  
+    &:hover {
+      background-color: $yellow-color;
+      border-radius: 50%;
+      opacity: 1;
+    }
+  }
+  

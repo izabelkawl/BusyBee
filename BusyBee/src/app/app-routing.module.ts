@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'dashboard',
@@ -24,8 +24,9 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: '**', component: PageNotFoundComponent
-  }
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({

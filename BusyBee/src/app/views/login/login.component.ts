@@ -28,7 +28,5 @@ export class LoginComponent {
     },
   ];
 
-  sendForm(): void {
-    console.log('log');
-  }
+  sendForm(): void {}
 }

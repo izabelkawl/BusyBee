@@ -5,6 +5,7 @@ $pink-color: #ff93b1;
 $yellow-color: #ffe979;
 $dark-yellow-color: #ffb826;
 $dark-gray-color: rgb(48, 48, 48);
+$gray-color: rgb(243, 243, 243);
 
 // shadow
 $shadow-props: 0px 0px 0.5vw $dark-pink-color;
@@ -21,3 +22,5 @@ $font-color: $dark-gray-color;
     4px 3px 0px $yellow-color,
     9px 8px 0px rgba(0, 0, 0, 0.15);
 }
+
+$border-radius: 22px;

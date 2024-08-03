@@ -4,6 +4,7 @@ import {
   addStatus,
   updateStatus,
   deleteStatus,
+  loadStatusesSuccess,
 } from '../actions/status.action';
 
 export const initialState: IStatusState = {
@@ -25,5 +26,9 @@ export const statusReducer = createReducer(
   on(deleteStatus, (state: IStatusState, { id }) => ({
     ...state,
     statuses: state.statuses.filter((status) => status.id !== id),
+  })),
+  on(loadStatusesSuccess, (state, { statuses }) => ({
+    ...state,
+    statuses: [...statuses]
   }))
 );

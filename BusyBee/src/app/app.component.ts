@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from './state/reducers';
-import * as TaskActions from './state/actions/task.action';
+import { loadTasks } from './state/actions/task.action';
 import { selectAllTasks } from './state/selectors/task.selector';
 import { ITask } from './state/models/task.model';
 import { LangService } from './core/lang.service';
@@ -15,8 +15,6 @@ import { LangService } from './core/lang.service';
 export class AppComponent {
   tasks$: Observable<ITask[]>;
 
-  public isLogged = false;
-
   constructor(
     private store: Store<AppState>,
     private langService: LangService,
@@ -25,14 +23,10 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(TaskActions.loadTasks());
+    this.store.dispatch(loadTasks());
   }
 
   changeLang(): void {
     this.langService.changeLang();
-  }
-
-  get backgroundColor(): string {
-    return this.isLogged ? 'yellow' : 'pink';
   }
 }
