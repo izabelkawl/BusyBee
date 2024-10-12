@@ -1,27 +1,27 @@
-<div class="app-container">
-  <div class="app-container__header">
-    <div class="app-container__home-icon" [routerLink]="'/'">
+<div class="app">
+  <div class="app__header">
+    <div class="app__home-icon" [routerLink]="'/'">
       <mat-icon fontIcon="hive" />
     </div>
-    <div class="app-container__lang-icon" (click)="changeLang()">
+    <div class="app__lang-icon" (click)="changeLang()">
       <mat-icon>language</mat-icon>
     </div>
 
-    <h1 class="app-container__title">{{ "TITLE" | translate }}</h1>
+    <h1 class="app__title">{{ "TITLE" | translate }}</h1>
     <img
-      class="app-container__image"
+      class="app__image"
       src="assets/img/icons/bee.png"
       alt="bee"
     />
     <p>{{ "IN_PROGRESS" | translate }}</p>
-    <div class="d-flex gap-4">
-      <app-button [routerLink]="'/login'">{{ "LOGIN" | translate }}</app-button>
+    <div class="d-flex gap-2">
+      <app-button [routerLink]="'/login'">{{ "LOGIN.TITLE" | translate }}</app-button>
       <app-button [routerLink]="'/register'">{{
-        "REGISTER" | translate
+        "REGISTER.TITLE" | translate
       }}</app-button>
     </div>
   </div>
-  <div class="app-container__content">
+  <div class="app__content">
     <router-outlet />
   </div>
 </div>

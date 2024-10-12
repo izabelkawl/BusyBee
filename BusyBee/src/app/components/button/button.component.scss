@@ -1,0 +1,15 @@
+@import "./../../../assets/scss/variables";
+
+.button {
+  background-color: $white-color;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+  color: rgba($dark-gray-color, 0.7);
+
+  &:hover {
+    color: $dark-gray-color;
+  }
+}

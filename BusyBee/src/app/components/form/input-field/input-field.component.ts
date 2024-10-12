@@ -5,22 +5,14 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-input-field',
   standalone: true,
-  imports: [
-    MatFormFieldModule,
-    FormsModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    TranslateModule,
-  ],
   templateUrl: './input-field.component.html',
+  styleUrl: './input-field.component.scss',
+  imports: [FormsModule, ReactiveFormsModule, TranslateModule],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -31,7 +23,6 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class InputFieldComponent implements ControlValueAccessor {
   @Input() placeholder!: string;
-  @Input() label!: string;
 
   public inputValue!: string;
   public disabled: boolean = false;

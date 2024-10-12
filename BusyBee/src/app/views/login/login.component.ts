@@ -16,14 +16,12 @@ export class LoginComponent {
   config: IConfig[] = [
     {
       formControlName: 'email',
-      label: 'E_MAIL',
-      placeholder: 'abc@gmail.com',
+      placeholder: 'LOGIN.E_MAIL',
       type: 'input',
     },
     {
       formControlName: 'password',
-      label: 'PASSWORD',
-      placeholder: '********',
+      placeholder: 'LOGIN.PASSWORD',
       type: 'input',
     },
   ];

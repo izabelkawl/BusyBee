@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { SessionStorageKeys } from '../shared/enums/sessions-storage.enum';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -6,16 +6,12 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root',
 })
 export class LangService {
+  #translate = inject(TranslateService);
   selectedLang!: LangType;
-
-  constructor(private translate: TranslateService) {
-    translate.addLangs(['en', 'pl'] as LangType[]);
-    translate.setDefaultLang(this.lang);
-  }
 
   changeLang(): void {
     this.selectedLang = this.oppositeTranslation;
-    this.translate.setDefaultLang(this.selectedLang);
+    this.#translate.setDefaultLang(this.selectedLang);
 
     try {
       sessionStorage?.setItem(SessionStorageKeys.LANG, this.selectedLang);

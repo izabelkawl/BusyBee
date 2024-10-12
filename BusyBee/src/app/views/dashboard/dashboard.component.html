@@ -1,7 +1,8 @@
 @if (statuses$ | async; as statuses) {
   <div class="dashboard-container">
-    @for (status of statuses; track status.id) {
-      <app-list [name]="status.name" />
-    }
+    
+  @for (list of statuses; let i = $index; track i) {
+      <app-lists [list]="list" />
+  }
   </div>
 }

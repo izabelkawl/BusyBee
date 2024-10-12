@@ -1,14 +1,19 @@
 {
-    "TITLE": "BusyBee",
-    "IN_PROGRESS": "In progress ...",
-    "LOGIN": "Login",
-    "LOG_IN": "Log in",
-    "REGISTRATION": "Registration",
-    "REGISTER": "Register",
+  "TITLE": "BusyBee",
+  "IN_PROGRESS": "In progress ...",
+  "PAGE_NOT_FOUND": "Page not found",
+  "REGISTER": {
+    "TITLE": "Register",
+    "CREATE_ACCOUNT": "Create account",
     "NICK": "Nick",
     "E_MAIL": "E-mail",
     "PASSWORD": "Password",
-    "REPEAT_PASSWORD": "Repeat password",
-    "CREATE_ACCOUNT": "Create account"
+    "REPEAT_PASSWORD": "Repeat password"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "LOG_IN": "Log in",
+    "E_MAIL": "E-mail",
+    "PASSWORD": "Password"
   }
-  
+}

@@ -1,11 +1,11 @@
-<div class="login-container">
-  <h1 class="login-container__title">{{ "LOG_IN" | translate }}!</h1>
-  <div class="login-container__content">
+<div class="login">
+  <h1 class="login__title">{{ "LOGIN.TITLE" | translate }}!</h1>
+  <div class="login__content">
     <app-form
       #loginForm
       [config]="config"
       (submit)="sendForm()"
-      [submitTitle]="'LOGIN' | translate"
+      [submitTitle]="'LOGIN.LOG_IN' | translate"
     />
   </div>
 </div>

@@ -16,26 +16,22 @@ export class RegisterComponent {
   config: IConfig[] = [
     {
       formControlName: 'login',
-      label: 'NICK',
-      placeholder: '',
+      placeholder: 'REGISTER.NICK',
       type: 'input',
     },
     {
       formControlName: 'email',
-      label: 'E_MAIL',
-      placeholder: 'abc@gmail.com',
+      placeholder: 'REGISTER.E_MAIL',
       type: 'input',
     },
     {
       formControlName: 'password',
-      label: 'PASSWORD',
-      placeholder: '********',
+      placeholder: 'REGISTER.PASSWORD',
       type: 'input',
     },
     {
       formControlName: 'password2',
-      label: 'REPEAT_PASSWORD',
-      placeholder: '********',
+      placeholder: 'REGISTER.REPEAT_PASSWORD',
       type: 'input',
     },
   ];

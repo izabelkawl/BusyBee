@@ -1,13 +1,19 @@
 {
   "TITLE": "BusyBee",
   "IN_PROGRESS": "W trakcie ...",
-  "LOGIN": "Logowanie",
-  "LOG_IN": "Zaloguj się",
-  "REGISTRATION": "Rejestracja",
-  "REGISTER": "Zarejestruj się",
-  "NICK": "Nazwa",
-  "E_MAIL": "E-mail",
-  "PASSWORD": "Hasło",
-  "REPEAT_PASSWORD": "Powtórz hasło",
-  "CREATE_ACCOUNT": "Stwórz konto"
+  "PAGE_NOT_FOUND": "Nie znaleziono strony",
+  "REGISTER": {
+    "TITLE": "Zarejestruj się",
+    "CREATE_ACCOUNT": "Stwórz konto",
+    "NICK": "Nazwa",
+    "E_MAIL": "E-mail",
+    "PASSWORD": "Hasło",
+    "REPEAT_PASSWORD": "Powtórz hasło"
+  },
+  "LOGIN": {
+    "TITLE": "Zaloguj się",
+    "LOG_IN": "Logowanie",
+    "E_MAIL": "E-mail",
+    "PASSWORD": "Hasło"
+  }
 }
