@@ -1,4 +1,5 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { FormGroup, Validator, Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormComponent } from 'src/app/components/form/form.component';
 import { IConfig } from 'src/app/components/form/form.models';
@@ -18,13 +19,17 @@ export class LoginComponent {
       formControlName: 'email',
       placeholder: 'LOGIN.E_MAIL',
       type: 'input',
+      validators: [Validators.required],
     },
     {
       formControlName: 'password',
       placeholder: 'LOGIN.PASSWORD',
       type: 'input',
+      validators: [Validators.required],
     },
   ];
 
-  sendForm(): void {}
+  sendForm(formGroup: FormGroup): void {
+    console.log(formGroup.valid);
+  }
 }

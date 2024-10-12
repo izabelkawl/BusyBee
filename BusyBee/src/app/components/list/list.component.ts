@@ -3,12 +3,12 @@ import { Component, Input } from '@angular/core';
 import { IStatus } from 'src/app/state/models/status.model';
 
 @Component({
-  selector: 'app-lists',
+  selector: 'app-list',
   standalone: true,
   imports: [UpperCasePipe],
-  templateUrl: './lists.component.html',
-  styleUrl: './lists.component.scss',
+  templateUrl: './list.component.html',
+  styleUrl: './list.component.scss',
 })
-export class ListsComponent {
+export class ListComponent {
   @Input() list!: IStatus;
 }

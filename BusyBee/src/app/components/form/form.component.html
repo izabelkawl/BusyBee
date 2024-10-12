@@ -7,12 +7,17 @@
             [formControlName]="ctrl.formControlName"
             [placeholder]="ctrl.placeholder"
           />
+          <app-validator [control]="formGroup.get(ctrl.formControlName)"/>
         }
         @default {}
       }
     }
 
-    <app-button (btnClicked)="onSubmit()" class="d-flex flex-column">
+    <app-button
+      [disabled]="formGroup.invalid"
+      (btnClicked)="onSubmit()"
+      class="d-flex flex-column"
+    >
       {{ submitTitle }}
     </app-button>
   </form>

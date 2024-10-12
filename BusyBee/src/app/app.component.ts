@@ -22,6 +22,7 @@ export class AppComponent {
   tasks$!: Observable<ITask[]>;
 
   ngOnInit(): void {
+    this.#langService.setDefaultLang();
     this.tasks$ = this.#store.select(selectAllTasks);
     this.#store.dispatch(loadTasks());
     this.testEP();
@@ -33,10 +34,14 @@ export class AppComponent {
 
   testEP(): void {
     this.http
-      .post('https://busybee.lipam.dev/hello', {
-        headers: new HttpHeaders({
+      .get('https://busybee.lipam.dev/hello', {
+        headers: {
           Authorization: 'Basic dXNlcjpwYXNzd29yZA==',
-        }),
+          Accept: 'application/json',
+          'User-Agent': 'IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4',
+          'Accept-Encoding': 'br, deflate, gzip, x-gzip',
+          Cookie: 'JSESSIONID=7F2B9C83341B2191DF7E8DE2086E3884',
+        },
       })
       .subscribe((vas) => {
         console.log(vas);

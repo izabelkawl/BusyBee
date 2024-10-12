@@ -4,7 +4,7 @@
     <app-form
       #loginForm
       [config]="config"
-      (submit)="sendForm()"
+      (submit)="sendForm($event)"
       [submitTitle]="'LOGIN.LOG_IN' | translate"
     />
   </div>

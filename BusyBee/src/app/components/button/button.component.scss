@@ -9,7 +9,7 @@
   margin: 10px 0;
   color: rgba($dark-gray-color, 0.7);
 
-  &:hover {
+  &:hover:not(:disabled) {
     color: $dark-gray-color;
   }
 }

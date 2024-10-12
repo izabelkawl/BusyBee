@@ -15,5 +15,8 @@
     "LOG_IN": "Logowanie",
     "E_MAIL": "E-mail",
     "PASSWORD": "Hasło"
+  },
+  "VALIDATOR": {
+    "REQUIRED": "Pole wymagane"
   }
 }

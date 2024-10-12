@@ -9,6 +9,7 @@ import {
 import { ButtonComponent } from '../button/button.component';
 import { InputFieldComponent } from './input-field/input-field.component';
 import { IConfig } from './form.models';
+import { ValidatorComponent } from './validator/validator.component';
 
 @Component({
   selector: 'app-form',
@@ -20,6 +21,7 @@ import { IConfig } from './form.models';
     NgFor,
     NgIf,
     ButtonComponent,
+    ValidatorComponent
   ],
   templateUrl: './form.component.html',
 })
@@ -27,6 +29,7 @@ export class FormComponent {
   @Input() set config(config: IConfig[]) {
     config.forEach((item: IConfig) => {
       this.formGroup.addControl(item.formControlName, new FormControl(null));
+      item.validators && this.formGroup.get(item.formControlName)?.addValidators(item.validators);
     });
 
     this._config = config;
@@ -34,7 +37,7 @@ export class FormComponent {
 
   @Input() submitTitle!: string;
 
-  @Output() submit: EventEmitter<void> = new EventEmitter<void>();
+  @Output() submit: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
   get config(): IConfig[] {
     return this._config;
@@ -45,6 +48,6 @@ export class FormComponent {
   private _config!: IConfig[];
 
   public onSubmit(): void {
-    this.submit.emit();
+    this.submit.emit(this.formGroup);
   }
 }

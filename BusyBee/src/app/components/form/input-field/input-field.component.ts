@@ -12,7 +12,11 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.scss',
-  imports: [FormsModule, ReactiveFormsModule, TranslateModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule,
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -6,10 +6,15 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root',
 })
 export class LangService {
-  #translate = inject(TranslateService);
-  selectedLang!: LangType;
+  readonly #translate = inject(TranslateService);
+  private selectedLang!: LangType;
 
-  changeLang(): void {
+  public setDefaultLang(): void {
+    this.#translate.addLangs(['en', 'pl'] as LangType[]);
+    this.#translate.setDefaultLang(this.lang);
+  }
+
+  public changeLang(): void {
     this.selectedLang = this.oppositeTranslation;
     this.#translate.setDefaultLang(this.selectedLang);
 
