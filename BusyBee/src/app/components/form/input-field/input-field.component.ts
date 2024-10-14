@@ -6,6 +6,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { InputTypes } from './input-field.models';
 
 @Component({
   selector: 'app-input-field',
@@ -27,6 +28,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class InputFieldComponent implements ControlValueAccessor {
   @Input() placeholder!: string;
+  @Input() type: InputTypes = 'text';
 
   public inputValue!: string;
   public disabled: boolean = false;

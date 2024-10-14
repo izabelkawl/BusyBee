@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -23,6 +23,7 @@ import { ValidatorComponent } from './validator/validator.component';
     ButtonComponent,
     ValidatorComponent
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './form.component.html',
 })
 export class FormComponent {
@@ -39,13 +40,13 @@ export class FormComponent {
 
   @Output() submit: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
 
-  get config(): IConfig[] {
-    return this._config;
-  }
-
   public formGroup: FormGroup = new FormGroup({});
 
   private _config!: IConfig[];
+
+  get config(): IConfig[] {
+    return this._config;
+  }
 
   public onSubmit(): void {
     this.submit.emit(this.formGroup);

@@ -5,6 +5,8 @@
     [(ngModel)]="inputValue"
     (ngModelChange)="onModelChange($event)"
     [disabled]="disabled"
+    [type]="type"
+    email="true"
     (blur)="onBlur()"
   />
 </div>

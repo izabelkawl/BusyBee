@@ -1,3 +1,3 @@
 @if (message) {
-  <p class="validator">{{ message | translate}}</p>
+  <div class="validator" [innerHTML]="message | translate"></div>
 }

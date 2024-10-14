@@ -1,24 +1,18 @@
-@if (config) {
-  <form [formGroup]="formGroup" class="d-flex flex-column">
-    @for (ctrl of config; track $index) {
-      @switch (ctrl.type) {
-        @case ("input") {
-          <app-input-field
-            [formControlName]="ctrl.formControlName"
-            [placeholder]="ctrl.placeholder"
-          />
-          <app-validator [control]="formGroup.get(ctrl.formControlName)"/>
-        }
-        @default {}
-      }
-    }
+<form [formGroup]="formGroup" class="d-flex flex-column">
+  @for (field of config; track $index) {
+    <app-input-field
+      [formControlName]="field.formControlName"
+      [placeholder]="field.placeholder"
+      [type]="field.type"
+    />
+    <app-validator [control]="formGroup.get(field.formControlName)" />
+  }
 
-    <app-button
-      [disabled]="formGroup.invalid"
-      (btnClicked)="onSubmit()"
-      class="d-flex flex-column"
-    >
-      {{ submitTitle }}
-    </app-button>
-  </form>
-}
+  <app-button
+    [disabled]="formGroup.invalid"
+    (btnClicked)="onSubmit()"
+    class="d-flex flex-column"
+  >
+    {{ submitTitle }}
+  </app-button>
+</form>

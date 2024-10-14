@@ -3,6 +3,7 @@ import { Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormComponent } from 'src/app/components/form/form.component';
 import { IConfig } from 'src/app/components/form/form.models';
+import { StrongPasswordRegx } from 'src/app/shared/const/validator-reg.const';
 
 @Component({
   selector: 'app-register',
@@ -18,26 +19,30 @@ export class RegisterComponent {
     {
       formControlName: 'login',
       placeholder: 'REGISTER.NICK',
-      type: 'input',
-      validators: [Validators.required],
+      type: 'text',
+      validators: [Validators.required, Validators.minLength(3)],
     },
     {
       formControlName: 'email',
       placeholder: 'REGISTER.E_MAIL',
-      type: 'input',
-      validators: [Validators.required],
+      type: 'email',
+      validators: [Validators.required, Validators.email],
     },
     {
       formControlName: 'password',
       placeholder: 'REGISTER.PASSWORD',
-      type: 'input',
-      validators: [Validators.required],
+      type: 'password',
+      validators: [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(StrongPasswordRegx),
+      ],
     },
     {
       formControlName: 'password2',
       placeholder: 'REGISTER.REPEAT_PASSWORD',
-      type: 'input',
-      validators: [Validators.required],
+      type: 'password',
+      validators: [Validators.required, Validators.minLength(8)],
     },
   ];
 

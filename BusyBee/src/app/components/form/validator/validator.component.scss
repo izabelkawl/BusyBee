@@ -1,6 +1,15 @@
 @import "./../../../../assets/scss/variables";
 
 .validator {
-  color: $dark-pink-color;
   font-size: 12px;
+  width: 200px;
+  padding: 0 3px;
+  color: $dark-pink-color;
+
+  &__password {
+    color: $dark-gray-color;
+    &-success {
+      color: $dark-yellow-color;
+    }
+  }
 }

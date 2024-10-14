@@ -17,6 +17,8 @@
     "PASSWORD": "Hasło"
   },
   "VALIDATOR": {
-    "REQUIRED": "Pole wymagane"
+    "REQUIRED": "Pole wymagane",
+    "EMAIL": "Email jest nieprawidłowy",
+    "PASSWORD": "<div class='validator__password'>Co najmniej jedna <span class='{{upperCaseValid}}'>wielka litera</span>, <span class='{{lowerCaseValid}}'>mała litera</span>, <span class='{{digitValid}}'>cyfra</span>, <span class='{{specialCharValid}}'>znak specjalny</span>, <span class='{{lengthValid}}'>co najmniej 8 znaków długości</span>.</div>"
   }
 }
