@@ -11,5 +11,6 @@
 
   &:hover:not(:disabled) {
     color: $dark-gray-color;
+    outline: 3px solid $yellow-color;
   }
 }

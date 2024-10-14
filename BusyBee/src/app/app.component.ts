@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from './state/reducers';
@@ -6,14 +6,14 @@ import { loadTasks } from './state/actions/task.action';
 import { selectAllTasks } from './state/selectors/task.selector';
 import { ITask } from './state/models/task.model';
 import { LangService } from './core/lang.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   readonly #store = inject(Store<AppState>);
   readonly #langService = inject(LangService);
 
@@ -21,11 +21,30 @@ export class AppComponent {
 
   tasks$!: Observable<ITask[]>;
 
-  ngOnInit(): void {
+  hideLoader = false;
+
+  ngAfterViewInit(): void {
     this.#langService.setDefaultLang();
     this.tasks$ = this.#store.select(selectAllTasks);
     this.#store.dispatch(loadTasks());
     this.testEP();
+    this.setBees();
+  }
+
+  setBees(): void {
+    const bees = document.querySelectorAll('.bee');
+    bees.forEach(function (bee: any) {
+      const size = Math.floor(Math.random() * (100 - 50 + 1) + 50) + 'px';
+
+      bee.style.width = size;
+      bee.style.height = size;
+      bee.style.top = `calc(${Math.random() * 100 + '%'} - ${size})`;
+      bee.style.left = `calc(${Math.random() * 100 + '%'} - ${size})`;
+    });
+
+    setTimeout(() => {
+      this.hideLoader = true;
+    }, 2000);
   }
 
   changeLang(): void {
@@ -37,10 +56,6 @@ export class AppComponent {
       .get('https://busybee.lipam.dev/hello', {
         headers: {
           Authorization: 'Basic dXNlcjpwYXNzd29yZA==',
-          Accept: 'application/json',
-          'User-Agent': 'IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4',
-          'Accept-Encoding': 'br, deflate, gzip, x-gzip',
-          Cookie: 'JSESSIONID=7F2B9C83341B2191DF7E8DE2086E3884',
         },
       })
       .subscribe((vas) => {

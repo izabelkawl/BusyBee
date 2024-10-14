@@ -8,14 +8,12 @@
     </div>
 
     <h1 class="app__title">{{ "TITLE" | translate }}</h1>
-    <img
-      class="app__image"
-      src="assets/img/icons/bee.png"
-      alt="bee"
-    />
+    <img class="app__image" src="assets/img/icons/bee.png" alt="bee" />
     <p>{{ "IN_PROGRESS" | translate }}</p>
     <div class="d-flex gap-2">
-      <app-button [routerLink]="'/login'">{{ "LOGIN.TITLE" | translate }}</app-button>
+      <app-button [routerLink]="'/login'">{{
+        "LOGIN.TITLE" | translate
+      }}</app-button>
       <app-button [routerLink]="'/register'">{{
         "REGISTER.TITLE" | translate
       }}</app-button>
@@ -25,3 +23,28 @@
     <router-outlet />
   </div>
 </div>
+
+@if (!hideLoader) {
+  <div class="beehive">
+    <img class="beehive_image" src="assets/img/icons/beehive.svg" alt="bee" />
+  </div>
+
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+  <img src="assets/img/icons/bee.png" class="bee" />
+}

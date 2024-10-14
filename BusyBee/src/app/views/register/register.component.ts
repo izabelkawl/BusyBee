@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormComponent } from 'src/app/components/form/form.component';
@@ -12,7 +12,7 @@ import { StrongPasswordRegx } from 'src/app/shared/const/validator-reg.const';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   @ViewChild('registerForm') registerForm!: TemplateRef<RegisterComponent>;
 
   config: IConfig[] = [
@@ -45,6 +45,10 @@ export class RegisterComponent {
       validators: [Validators.required, Validators.minLength(8)],
     },
   ];
+
+  ngOnInit(): void {
+    
+  }
 
   sendForm(): void {}
 }

@@ -33,7 +33,7 @@ export class ValidatorComponent {
     return null;
   }
 
-  validatePassword(value: string) {
+  validatePassword(value: string): string {
     function includeColorClass(value: boolean): string {
       return value ? 'validator__password-success' : '';
     }
