@@ -4,7 +4,6 @@ import {
   addTask,
   updateTask,
   deleteTask,
-  loadTasks,
   loadTasksSuccess,
 } from './../actions/task.action';
 

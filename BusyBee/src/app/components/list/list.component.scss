@@ -7,7 +7,6 @@ $icon-size: 20px;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 4px;
-  margin: 1px;
 }
 
 .list {
@@ -30,9 +29,23 @@ $icon-size: 20px;
 
   &__content {
     height: calc(100% - 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
-    &-item {
+    &-task {
       @extend %item;
+    }
+    
+    &-add {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 2px dashed $dark-yellow-color;
     }
   }
 }

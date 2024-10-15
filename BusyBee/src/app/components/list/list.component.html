@@ -1,11 +1,16 @@
 <div class="list">
   <div class="list__header">
     <span> {{ list.name | uppercase }} </span>
-    <span class="list__icon">︙</span>
+    <span class="list__icon"><mat-icon>more_vert</mat-icon></span>
   </div>
   <div class="list__content">
-    <div class="list__content-item">
-      
+    @for (task of tempList; track $index) {
+      <div class="list__content-task">
+        {{ task }}
+      </div>
+    }
+    <div class="list__content-add" (click)="addTask()">
+      <mat-icon>add</mat-icon>
     </div>
   </div>
 </div>

@@ -1,0 +1,7 @@
+@if (!hideLoader) {
+  <div class="loader"></div>
+  <img class="beehive" src="assets/img/icons/beehive.svg" alt="beehive" />
+  @for (bee of bees; track $index) {
+    <img class="bee" src="assets/img/icons/bee.png" alt="bee" />
+  }
+}

@@ -1,3 +1,5 @@
+<app-loader [hideLoader]="hideLoader"/>
+
 <div class="app">
   <div class="app__header">
     <div class="app__home-icon" [routerLink]="'/'">
@@ -23,28 +25,3 @@
     <router-outlet />
   </div>
 </div>
-
-@if (!hideLoader) {
-  <div class="beehive">
-    <img class="beehive_image" src="assets/img/icons/beehive.svg" alt="bee" />
-  </div>
-
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-  <img src="assets/img/icons/bee.png" class="bee" />
-}

@@ -18,6 +18,7 @@ import { selectAllStatuses } from 'src/app/state/selectors/status.selector';
 })
 export class DashboardComponent implements OnInit {
   readonly #store = inject(Store<AppState>);
+
   statuses$!: Observable<IStatus[]>;
 
   ngOnInit(): void {
@@ -29,4 +30,6 @@ export class DashboardComponent implements OnInit {
     );
     this.#store.dispatch(loadStatuses());
   }
+
+  addTask(id: number): void {}
 }

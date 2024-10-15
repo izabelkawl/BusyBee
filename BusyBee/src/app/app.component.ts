@@ -16,31 +16,17 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements AfterViewInit {
   readonly #store = inject(Store<AppState>);
   readonly #langService = inject(LangService);
+  readonly #http = inject(HttpClient);
 
-  readonly http = inject(HttpClient);
+  private tasks$!: Observable<ITask[]>;
 
-  tasks$!: Observable<ITask[]>;
-
-  hideLoader = false;
+  public hideLoader = false;
 
   ngAfterViewInit(): void {
     this.#langService.setDefaultLang();
     this.tasks$ = this.#store.select(selectAllTasks);
     this.#store.dispatch(loadTasks());
     this.testEP();
-    this.setBees();
-  }
-
-  setBees(): void {
-    const bees = document.querySelectorAll('.bee');
-    bees.forEach(function (bee: any) {
-      const size = Math.floor(Math.random() * (100 - 50 + 1) + 50) + 'px';
-
-      bee.style.width = size;
-      bee.style.height = size;
-      bee.style.top = `calc(${Math.random() * 100 + '%'} - ${size})`;
-      bee.style.left = `calc(${Math.random() * 100 + '%'} - ${size})`;
-    });
 
     setTimeout(() => {
       this.hideLoader = true;
@@ -52,14 +38,10 @@ export class AppComponent implements AfterViewInit {
   }
 
   testEP(): void {
-    this.http
-      .get('https://busybee.lipam.dev/hello', {
-        headers: {
-          Authorization: 'Basic dXNlcjpwYXNzd29yZA==',
-        },
-      })
-      .subscribe((vas) => {
-        console.log(vas);
-      });
+    this.#http.get('https://busybee.lipam.dev/hello', {
+      headers: {
+        Authorization: 'Basic dXNlcjpwYXNzd29yZA==',
+      },
+    });
   }
 }

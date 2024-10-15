@@ -12,6 +12,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ButtonComponent } from './components/button/button.component';
 import { CommonModule } from '@angular/common';
+import { LoaderComponent } from "./components/loader/loader.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,13 +26,14 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     ButtonComponent,
     TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient],
+        },
     }),
-  ],
+    LoaderComponent
+],
   bootstrap: [AppComponent],
   providers: [provideAnimationsAsync()],
 })
