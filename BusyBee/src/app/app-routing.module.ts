@@ -8,7 +8,7 @@ import { RegisterComponent } from './views/register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'register',
     pathMatch: 'full',
   },
   {

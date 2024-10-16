@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit {
 
     setTimeout(() => {
       this.hideLoader = true;
-    }, 2000);
+    }, 1000);
   }
 
   changeLang(): void {

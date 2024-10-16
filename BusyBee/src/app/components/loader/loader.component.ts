@@ -16,7 +16,7 @@ import {
 export class LoaderComponent implements AfterViewInit {
   @Input() hideLoader = false;
 
-  bees = new Array(15);
+  bees = new Array(10);
 
   ngAfterViewInit(): void {
     this.setBees();
@@ -26,7 +26,7 @@ export class LoaderComponent implements AfterViewInit {
     const bees = document.querySelectorAll('.bee');
     bees.forEach((bee: Element) => {
       if (bee instanceof HTMLElement) {
-        const size = Math.floor(Math.random() * (100 - 50 + 1) + 50) + 'px';
+        const size = Math.floor(Math.random() * (50 - 10 + 1) + 10) + 'px';
 
         bee.style.width = size;
         bee.style.height = size;
