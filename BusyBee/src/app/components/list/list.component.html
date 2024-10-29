@@ -1,16 +1,34 @@
 <div class="list">
   <div class="list__header">
-    <span> {{ list.name | uppercase }} </span>
+    <span> {{ config.name | uppercase }} </span>
     <span class="list__icon"><mat-icon>more_vert</mat-icon></span>
   </div>
   <div class="list__content">
-    @for (task of tempList; track $index) {
-      <div class="list__content-task">
-        {{ task }}
-      </div>
+    @for (task of tasks; track $index) {
+      <ng-container *ngTemplateOutlet="taskBody; context: { task }" />
     }
-    <div class="list__content-add" (click)="addTask()">
+    <div class="list__content-add-button" (click)="addTask()">
       <mat-icon>add</mat-icon>
     </div>
   </div>
 </div>
+
+<ng-template #taskBody let-task="task">
+  <div class="task" (click)="editTask(task)">
+    <span class="task__title">
+      {{ task.title }}
+    </span>
+
+    <span class="task__user">
+      {{ task.fullName }}
+    </span>
+
+    <span class="task__date">
+      {{ task.updatedAt | date }}
+    </span>
+
+    <span class="task__description">
+      {{ task.description }}
+    </span>
+  </div>
+</ng-template>

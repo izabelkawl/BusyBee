@@ -1,7 +1,19 @@
 @if (statuses$ | async; as statuses) {
   <div class="dashboard">
     @for (list of statuses; let i = $index; track i) {
-      <app-list [list]="list" (addTaskEvent)="addTask($event)"/>
+      <app-list
+        [config]="list"
+        [tasks]="taskByStatusId(list.id) | async"
+        (addTaskEvent)="addTask($event)"
+        (editTaskEvent)="editTask($event)"
+      />
     }
   </div>
+}
+
+@if (modalConfig.visible) {
+  <app-modal
+    [task]="modalConfig.task"
+    (closedModal)="modalConfig.visible = false"
+  />
 }

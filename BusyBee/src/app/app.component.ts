@@ -20,17 +20,11 @@ export class AppComponent implements AfterViewInit {
 
   private tasks$!: Observable<ITask[]>;
 
-  public hideLoader = false;
-
   ngAfterViewInit(): void {
     this.#langService.setDefaultLang();
     this.tasks$ = this.#store.select(selectAllTasks);
     this.#store.dispatch(loadTasks());
     this.testEP();
-
-    setTimeout(() => {
-      this.hideLoader = true;
-    }, 1000);
   }
 
   changeLang(): void {

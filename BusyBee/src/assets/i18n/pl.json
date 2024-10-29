@@ -2,6 +2,9 @@
   "TITLE": "BusyBee",
   "IN_PROGRESS": "W trakcie ...",
   "PAGE_NOT_FOUND": "Nie znaleziono strony",
+  "EDIT": "Edycja",
+  "SAVE": "Zapisz zmiany",
+  "DELETE": "Usuń zadanie",
   "REGISTER": {
     "TITLE": "Zarejestruj się",
     "CREATE_ACCOUNT": "Stwórz konto",
@@ -20,5 +23,9 @@
     "REQUIRED": "Pole wymagane",
     "EMAIL": "Email jest nieprawidłowy",
     "PASSWORD": "<div class='validator__password'>Co najmniej jedna <span class='{{upperCaseValid}}'>wielka litera</span>, <span class='{{lowerCaseValid}}'>mała litera</span>, <span class='{{digitValid}}'>cyfra</span>, <span class='{{specialCharValid}}'>znak specjalny</span>, <span class='{{lengthValid}}'>co najmniej 8 znaków długości</span>.</div>"
+  },
+  "PLACEHOLDERS": {
+    "TITLE": "Dodaj tytuł..",
+    "DESCRIPTION": "Dodaj opis.."
   }
 }

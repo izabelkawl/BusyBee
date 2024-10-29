@@ -1,24 +1,30 @@
-import { UpperCasePipe } from '@angular/common';
+import { DatePipe, NgTemplateOutlet, UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { IStatus } from 'src/app/state/models/status.model';
+import { ITask } from 'src/app/state/models/task.model';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [UpperCasePipe, MatIcon],
+  imports: [UpperCasePipe, MatIcon, DatePipe, NgTemplateOutlet],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
 })
 export class ListComponent {
-  @Input() list!: IStatus;
+  @Input() config!: IStatus;
+
+  @Input() tasks!: ITask[] | null;
 
   @Output() addTaskEvent: EventEmitter<number> = new EventEmitter();
 
-  tempList: string[] = [];
+  @Output() editTaskEvent: EventEmitter<ITask> = new EventEmitter();
 
   addTask(): void {
-    this.tempList.push(this.list.list[0]);
-    this.addTaskEvent.emit(this.list.id);
+    this.addTaskEvent.emit(this.config.id);
+  }
+
+  editTask(task: ITask): void {
+    this.editTaskEvent.emit(task);
   }
 }

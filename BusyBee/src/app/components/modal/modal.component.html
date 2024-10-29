@@ -1,0 +1,45 @@
+@if (task) {
+  <div class="dialog">
+    <div class="dialog__header">
+      <span>{{ "EDIT" | translate | uppercase }}</span>
+      <mat-icon class="dialog__header-icon" (click)="closeModal()">
+        close
+      </mat-icon>
+    </div>
+
+    <div class="task">
+      <span class="task__title">
+        @if (task.title) {
+          {{ task.title }}
+        } @else {
+          <span class="task__placeholder">{{
+            "PLACEHOLDERS.TITLE" | translate
+          }}</span>
+        }
+      </span>
+
+      <span class="task__user">
+        {{ task.fullName }}
+      </span>
+
+      <span class="task__date">
+        {{ task.updatedAt | date }}
+      </span>
+
+      <span class="task__description">
+        @if (task.description) {
+          {{ task.description }}
+        } @else {
+          <span class="task__placeholder">{{
+            "PLACEHOLDERS.DESCRIPTION" | translate
+          }}</span>
+        }
+      </span>
+    </div>
+
+    <div class="dialog__buttons">
+      <app-button>{{ "DELETE" | translate }}</app-button>
+      <app-button>{{ "SAVE" | translate }}</app-button>
+    </div>
+  </div>
+}
