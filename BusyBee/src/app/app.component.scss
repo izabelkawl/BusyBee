@@ -1,49 +1,12 @@
 @import "./../assets/scss/variables";
-@import "./../assets/scss/icons";
-
-%centered_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .app {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   background-color: $dark-yellow-color;
-
-  &__header {
-    @extend %centered_container;
-    margin: 50px 0;
-  }
-
+  
   &__content {
     @extend %centered_container;
-  }
-
-  &__home-icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    @extend %icon_container;
-  }
-
-  &__lang-icon {
-    position: absolute;
-    top: 30px;
-    left: calc(30px + $icon-size);
-    @extend %icon_container;
-  }
-
-  &__title {
-    @extend %title-font;
-  }
-
-  &__image {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 0.5rem;
   }
 }

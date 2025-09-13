@@ -1,26 +1,8 @@
-<!-- <app-loader [hideLoader]="hideLoader"/> -->
+<!-- <app-loader [hideLoader]="hideLoader" /> -->
 
 <div class="app">
-  <div class="app__header">
-    <div class="app__home-icon" [routerLink]="'/dashboard'">
-      <mat-icon fontIcon="hive" />
-    </div>
-    <div class="app__lang-icon" (click)="changeLang()">
-      <mat-icon>language</mat-icon>
-    </div>
-
-    <h1 class="app__title">{{ "TITLE" | translate }}</h1>
-    <img class="app__image" src="assets/img/icons/bee.png" alt="bee" />
-    <p>{{ "IN_PROGRESS" | translate }}</p>
-    <div class="d-flex gap-2">
-      <app-button [routerLink]="'/login'">{{
-        "LOGIN.TITLE" | translate
-      }}</app-button>
-      <app-button [routerLink]="'/register'">{{
-        "REGISTER.TITLE" | translate
-      }}</app-button>
-    </div>
-  </div>
+  <app-nav/>
+  
   <div class="app__content">
     <router-outlet />
   </div>

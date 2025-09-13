@@ -1,6 +1,15 @@
 @import "./../../../assets/scss/variables";
 @import "./../../../assets/scss/icons";
 
+.dialog-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+}
+
 .dialog {
   position: absolute;
   width: 500px;

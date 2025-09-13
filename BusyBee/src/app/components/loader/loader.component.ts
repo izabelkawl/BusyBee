@@ -18,11 +18,11 @@ export class LoaderComponent implements AfterViewInit {
 
   bees = new Array(10);
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     this.setBees();
   }
 
-  setBees(): void {
+  private setBees(): void {
     const bees = document.querySelectorAll('.bee');
     bees.forEach((bee: Element) => {
       if (bee instanceof HTMLElement) {

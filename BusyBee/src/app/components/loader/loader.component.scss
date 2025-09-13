@@ -1,5 +1,14 @@
 @import "./../../../assets/scss/variables";
 
+.loader {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: revealBackground 2s ease-out;
+}
+
 .beehive {
   position: absolute;
   top: calc(50vh - 40px);

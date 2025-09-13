@@ -1,0 +1,25 @@
+  <div class="app__header">
+    <div class="app__home-icon" [routerLink]="'/dashboard'">
+      <mat-icon fontIcon="hive" />
+    </div>
+    <div class="app__lang-icon" (click)="changeLang()">
+      <mat-icon>language</mat-icon>
+    </div>
+    <div class="app__vert-icon">
+      <mat-icon>more_vert</mat-icon>
+    </div>
+
+    <h1 class="app__title">{{ "TITLE" | translate }}</h1>
+
+    @if (!userLogged) {
+      <img class="app__image" src="assets/img/icons/bee.png" alt="bee" />
+      <div class="d-flex gap-2">
+        <app-button [routerLink]="'/login'">{{
+          "LOGIN.TITLE" | translate
+        }}</app-button>
+        <app-button [routerLink]="'/register'">{{
+          "REGISTER.TITLE" | translate
+        }}</app-button>
+      </div>
+    }
+  </div>

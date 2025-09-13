@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
+  public hideLoader = false;
   readonly #store = inject(Store<AppState>);
   readonly #langService = inject(LangService);
   readonly #http = inject(HttpClient);
