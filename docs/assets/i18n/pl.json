@@ -19,6 +19,10 @@
     "E_MAIL": "E-mail",
     "PASSWORD": "Hasło"
   },
+  "NAV": {
+    "PROFILE": "Profile",
+    "LOGOUT": "Log out"
+  },
   "VALIDATOR": {
     "REQUIRED": "Pole wymagane",
     "EMAIL": "Email jest nieprawidłowy",

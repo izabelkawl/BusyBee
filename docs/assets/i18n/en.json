@@ -19,6 +19,10 @@
     "E_MAIL": "E-mail",
     "PASSWORD": "Password"
   },
+  "NAV": {
+    "PROFILE": "Profil",
+    "LOGOUT": "Wyloguj"
+  },
   "VALIDATOR": {
     "REQUIRED": "Field is required",
     "EMAIL": "Email is incorrect",
