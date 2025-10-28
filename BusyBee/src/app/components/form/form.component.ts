@@ -1,4 +1,4 @@
-import { NgFor, NgIf } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   FormControl,
@@ -12,19 +12,16 @@ import { IConfig } from './form.models';
 import { ValidatorComponent } from './validator/validator.component';
 
 @Component({
-  selector: 'app-form',
-  standalone: true,
-  imports: [
+    selector: 'app-form',
+    imports: [
     InputFieldComponent,
     FormsModule,
     ReactiveFormsModule,
-    NgFor,
-    NgIf,
     ButtonComponent,
     ValidatorComponent
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './form.component.html',
+],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    templateUrl: './form.component.html'
 })
 export class FormComponent {
   @Input() set config(config: IConfig[]) {

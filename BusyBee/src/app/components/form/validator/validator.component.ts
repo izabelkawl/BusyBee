@@ -1,15 +1,13 @@
-import { NgClass } from '@angular/common';
 import { Component, inject, Input, ViewEncapsulation } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-validator',
-  standalone: true,
-  imports: [TranslateModule, NgClass],
-  templateUrl: './validator.component.html',
-  styleUrl: './validator.component.scss',
-  encapsulation: ViewEncapsulation.ShadowDom,
+    selector: 'app-validator',
+    imports: [TranslateModule],
+    templateUrl: './validator.component.html',
+    styleUrl: './validator.component.scss',
+    encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ValidatorComponent {
   #translateService = inject(TranslateService);

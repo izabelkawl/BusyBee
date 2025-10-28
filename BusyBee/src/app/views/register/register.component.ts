@@ -6,11 +6,10 @@ import { IConfig } from 'src/app/components/form/form.models';
 import { StrongPasswordRegx } from 'src/app/shared/const/validator-reg.const';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [FormComponent, TranslateModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss',
+    selector: 'app-register',
+    imports: [FormComponent, TranslateModule],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('registerForm') registerForm!: TemplateRef<RegisterComponent>;

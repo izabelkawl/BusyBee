@@ -6,12 +6,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-loader',
-  standalone: true,
-  templateUrl: './loader.component.html',
-  styleUrl: './loader.component.scss',
-  imports: [],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-loader',
+    templateUrl: './loader.component.html',
+    styleUrl: './loader.component.scss',
+    imports: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoaderComponent implements AfterViewInit {
   @Input() hideLoader = false;

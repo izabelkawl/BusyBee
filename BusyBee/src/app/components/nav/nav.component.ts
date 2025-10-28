@@ -7,11 +7,10 @@ import { LangService } from 'src/app/core/lang.service';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-nav',
-  standalone: true,
-  imports: [RouterModule, MatIcon, TranslateModule, ButtonComponent, MatMenu, MatMenuModule],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.scss',
+    selector: 'app-nav',
+    imports: [RouterModule, MatIcon, TranslateModule, ButtonComponent, MatMenu, MatMenuModule],
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.scss'
 })
 export class NavComponent {
   readonly #router = inject(Router);

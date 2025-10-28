@@ -6,11 +6,10 @@ import { ITask } from 'src/app/state/models/task.model';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-modal',
-  standalone: true,
-  imports: [TranslateModule, DatePipe, MatIcon, ButtonComponent, UpperCasePipe],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss',
+    selector: 'app-modal',
+    imports: [TranslateModule, DatePipe, MatIcon, ButtonComponent, UpperCasePipe],
+    templateUrl: './modal.component.html',
+    styleUrl: './modal.component.scss'
 })
 export class ModalComponent {
   @Input() task!: ITask | undefined;

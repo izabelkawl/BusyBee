@@ -1,7 +1,7 @@
 import { addTask, loadTasks } from './../../state/actions/task.action';
 import { selectAllTasks } from './../../state/selectors/task.selector';
 import { ITask } from './../../state/models/task.model';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,18 +14,15 @@ import { selectAllStatuses } from 'src/app/state/selectors/status.selector';
 import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [
+    selector: 'app-dashboard',
+    imports: [
     TranslateModule,
     AsyncPipe,
-    NgIf,
-    NgFor,
     ListComponent,
-    ModalComponent,
-  ],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+    ModalComponent
+],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
   readonly #store = inject(Store<AppState>);

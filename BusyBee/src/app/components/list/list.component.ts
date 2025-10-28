@@ -5,11 +5,10 @@ import { IStatus } from 'src/app/state/models/status.model';
 import { ITask } from 'src/app/state/models/task.model';
 
 @Component({
-  selector: 'app-list',
-  standalone: true,
-  imports: [UpperCasePipe, MatIcon, DatePipe, NgTemplateOutlet],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.scss',
+    selector: 'app-list',
+    imports: [UpperCasePipe, MatIcon, DatePipe, NgTemplateOutlet],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.scss'
 })
 export class ListComponent {
   @Input() config!: IStatus;

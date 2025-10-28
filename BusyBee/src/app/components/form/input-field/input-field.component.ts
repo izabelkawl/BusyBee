@@ -9,22 +9,21 @@ import { TranslateModule } from '@ngx-translate/core';
 import { InputTypes } from './input-field.models';
 
 @Component({
-  selector: 'app-input-field',
-  standalone: true,
-  templateUrl: './input-field.component.html',
-  styleUrl: './input-field.component.scss',
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    TranslateModule,
-  ],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputFieldComponent),
-      multi: true,
-    },
-  ],
+    selector: 'app-input-field',
+    templateUrl: './input-field.component.html',
+    styleUrl: './input-field.component.scss',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        TranslateModule,
+    ],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => InputFieldComponent),
+            multi: true,
+        },
+    ]
 })
 export class InputFieldComponent implements ControlValueAccessor {
   @Input() placeholder!: string;
