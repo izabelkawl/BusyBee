@@ -4,16 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StateModule } from './state/state.module';
-import {
-  HttpClient,
-  provideHttpClient,
-} from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { provideTranslateService, TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { provideTranslateHttpLoader, TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {
+  provideTranslateService,
+  TranslateLoader,
+  TranslateModule,
+} from '@ngx-translate/core';
+import {
+  provideTranslateHttpLoader,
+  TranslateHttpLoader,
+} from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NavComponent } from './components/nav/nav.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,15 +39,16 @@ import { NavComponent } from './components/nav/nav.component';
     LoaderComponent,
     NavComponent,
   ],
-  providers: [ 
-         provideHttpClient(),
+  providers: [
+    AuthService,
+    provideHttpClient(),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
         prefix: '/assets/i18n/',
-        suffix: '.json'
+        suffix: '.json',
       }),
-    })
-]
+    }),
+  ],
 })
 export class AppModule {}
 

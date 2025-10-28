@@ -4,16 +4,13 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { LoginComponent } from './views/login/login.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { RegisterComponent } from './views/register/register.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'register',
     pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
   },
   {
     path: 'login',
@@ -24,8 +21,14 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

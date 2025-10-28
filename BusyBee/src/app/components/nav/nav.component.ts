@@ -5,19 +5,33 @@ import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LangService } from 'src/app/core/lang.service';
 import { ButtonComponent } from '../button/button.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-    selector: 'app-nav',
-    imports: [RouterModule, MatIcon, TranslateModule, ButtonComponent, MatMenu, MatMenuModule],
-    templateUrl: './nav.component.html',
-    styleUrl: './nav.component.scss'
+  selector: 'app-nav',
+  imports: [
+    RouterModule,
+    MatIcon,
+    TranslateModule,
+    ButtonComponent,
+    MatMenu,
+    MatMenuModule,
+  ],
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.scss',
 })
 export class NavComponent {
   readonly #router = inject(Router);
   readonly #langService = inject(LangService);
 
-  changeLang(): void {
+  constructor(private authService: AuthService) {}
+
+  public changeLang(): void {
     this.#langService.changeLang();
+  }
+
+  public logout(): void {
+    this.authService.logout();
   }
 
   public get userLogged(): boolean {
