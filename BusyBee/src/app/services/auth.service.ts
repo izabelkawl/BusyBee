@@ -1,33 +1,36 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
-import { SessionStorageKeys } from "../shared/enums/sessions-storage.enum";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { SessionStorageKeys } from '../shared/enums/sessions-storage.enum';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-    private currentUser: BehaviorSubject<any> = new BehaviorSubject({});
+  private currentUser: BehaviorSubject<any> = new BehaviorSubject({});
 
-    constructor(private httpClient: HttpClient) {
-        this.currentUser.next(localStorage.getItem(SessionStorageKeys.USER))
-    }
+  constructor(private httpClient: HttpClient) {
+    this.currentUser.next(localStorage.getItem(SessionStorageKeys.USER));
+  }
 
-    public logout(): void {
-        localStorage.removeItem(SessionStorageKeys.USER)
-        this.currentUser.next(null);
-    }
+  public logout(): void {
+    localStorage.removeItem(SessionStorageKeys.USER);
+    this.currentUser.next(null);
+  }
 
-    public setUser(user: any): void {
-        this.currentUser.next(user)
-        localStorage.setItem(SessionStorageKeys.USER, JSON.stringify(user));
-    }
+  public setUser(user: any): void {
+    this.currentUser.next(user);
+    localStorage.setItem(SessionStorageKeys.USER, JSON.stringify(user));
+  }
 
-    public get user(): any {
-        return this.currentUser.value;
-    }
+  public get user(): any {
+    return this.currentUser.value;
+  }
 
-    public login(email: string,password: string): Observable<any> {
-        return this.httpClient.post('https://lipadev.bieda.it/', { email, password});
-    }
+  public login(username: string, password: string): Observable<any> {
+    return this.httpClient.post('https://lipam.bieda.it/api/login', {
+      username,
+      password,
+    });
+  }
 }
