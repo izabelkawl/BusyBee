@@ -28,7 +28,7 @@
     .task {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: 22px 22px 1fr;
       background-color: $gray-color;
       padding: 20px;
       border-radius: 4px;

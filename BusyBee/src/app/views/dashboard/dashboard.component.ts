@@ -1,4 +1,9 @@
-import { addTask, loadTasks } from './../../state/actions/task.action';
+import {
+  addTask,
+  deleteTask,
+  loadTasks,
+  updateTask,
+} from './../../state/actions/task.action';
 import { selectAllTasks } from './../../state/selectors/task.selector';
 import { ITask } from './../../state/models/task.model';
 import { AsyncPipe } from '@angular/common';
@@ -11,18 +16,16 @@ import { loadStatuses } from 'src/app/state/actions/status.action';
 import { IStatus } from 'src/app/state/models/status.model';
 import { AppState } from 'src/app/state/reducers';
 import { selectAllStatuses } from 'src/app/state/selectors/status.selector';
-import { ModalComponent } from '../../components/modal/modal.component';
+import {
+  CloseModal,
+  ModalComponent,
+} from '../../components/modal/modal.component';
 
 @Component({
-    selector: 'app-dashboard',
-    imports: [
-    TranslateModule,
-    AsyncPipe,
-    ListComponent,
-    ModalComponent
-],
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.scss'
+  selector: 'app-dashboard',
+  imports: [TranslateModule, AsyncPipe, ListComponent, ModalComponent],
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
   readonly #store = inject(Store<AppState>);
@@ -33,6 +36,10 @@ export class DashboardComponent implements OnInit {
   modalConfig: { visible: boolean; task?: ITask } = { visible: false };
 
   ngOnInit(): void {
+    this.reloadTasks();
+  }
+
+  reloadTasks(): void {
     this.statuses$ = this.#store.select(selectAllStatuses).pipe(
       map((statuses) => {
         const sorted = Array.from(statuses).sort((a, b) => a.order - b.order);
@@ -41,6 +48,7 @@ export class DashboardComponent implements OnInit {
     );
     this.tasks$ = this.#store.select(selectAllTasks).pipe(
       map((tasks) => {
+        console.log(tasks);
         const sorted = Array.from(tasks).sort((a, b) => a.order - b.order);
         return sorted;
       }),
@@ -82,5 +90,24 @@ export class DashboardComponent implements OnInit {
         return sorted;
       }),
     );
+  }
+
+  onModalClosed(event: CloseModal): void {
+    switch (event.action) {
+      case 'DELETE':
+        this.#store.dispatch(deleteTask({ id: event.data.id }));
+        break;
+      case 'EDIT':
+        this.#store.dispatch(
+          updateTask({
+            task: event.data,
+          }),
+        );
+        break;
+      default:
+        break;
+    }
+
+    this.modalConfig.visible = false;
   }
 }
